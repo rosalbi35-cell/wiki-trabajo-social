@@ -3,1059 +3,935 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wiki | Antonio Gramsci y Trabajo Social</title>
+
+<title>Wiki - Pensamiento y Trabajo Social</title>
 
 <style>
-:root{
---azul:#172b4d;
---azul2:#35536f;
---dorado:#b38b43;
---crema:#f6f1e7;
---fondo:#eef1f5;
---blanco:#ffffff;
---texto:#222222;
-}
-
 *{
-box-sizing:border-box;
-scroll-behavior:smooth;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-margin:0;
-background:var(--fondo);
-color:var(--texto);
-font-family:"Times New Roman",Times,serif;
-font-size:17px;
-line-height:1.65;
+    margin:0;
+    font-family:"Times New Roman", Times, serif;
+    background:#f5f1eb;
+    color:#292929;
+    line-height:1.7;
 }
 
-/* MENÚ LATERAL */
-
-aside{
-position:fixed;
-left:0;
-top:0;
-width:270px;
-height:100vh;
-background:var(--azul);
-color:white;
-padding:25px 18px;
-overflow:auto;
+/* MENÚ */
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:245px;
+    height:100vh;
+    background:#342b2b;
+    color:white;
+    padding:28px 18px;
+    overflow-y:auto;
+    z-index:1000;
 }
 
-.logo{
-font-size:27px;
-font-weight:bold;
-padding:0 10px 18px;
-border-bottom:1px solid #ffffff44;
+.sidebar h2{
+    text-align:center;
+    font-size:25px;
+    margin-bottom:25px;
+    color:#e8cfa8;
 }
 
-.logo small{
-display:block;
-font-family:Arial,sans-serif;
-font-size:12px;
-font-weight:normal;
-color:#ccd6e0;
-margin-top:5px;
+.sidebar a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 13px;
+    margin:5px 0;
+    border-radius:7px;
+    font-size:17px;
 }
 
-aside h4{
-font-family:Arial,sans-serif;
-font-size:11px;
-letter-spacing:1.3px;
-color:#adbdce;
-margin:24px 10px 7px;
-text-transform:uppercase;
-}
-
-aside a{
-display:block;
-color:white;
-text-decoration:none;
-padding:8px 10px;
-border-radius:7px;
-font-size:15px;
-}
-
-aside a:hover{
-background:#ffffff18;
+.sidebar a:hover{
+    background:#6e5750;
+    color:#fff;
 }
 
 /* CONTENIDO */
-
-main{
-margin-left:270px;
-max-width:1150px;
-padding:0 34px 45px;
+.main{
+    margin-left:245px;
+    padding:0 35px 50px;
 }
 
-/* ENCABEZADO */
-
-.hero{
-margin:0 -34px 25px;
-padding:55px 40px;
-background:linear-gradient(135deg,#172b4d,#47647f);
-color:white;
+header{
+    background:linear-gradient(135deg,#493a37,#80665b);
+    color:white;
+    padding:65px 35px;
+    text-align:center;
+    margin:0 -35px 35px;
+    border-bottom:7px solid #c7a779;
 }
 
-.hero h1{
-font-size:52px;
-margin:10px 0;
-font-weight:bold;
+header h1{
+    font-size:46px;
+    margin:0 0 10px;
 }
 
-.hero p{
-max-width:900px;
-font-size:20px;
+header p{
+    font-size:21px;
+    margin:5px 0;
 }
 
-.card{
-background:white;
-border-radius:14px;
-padding:30px;
-margin:22px 0;
-box-shadow:0 5px 18px #172b4914;
+.intro{
+    max-width:1000px;
+    margin:0 auto 35px;
+    background:white;
+    padding:28px;
+    border-left:6px solid #b58b62;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 h2{
-font-size:32px;
-color:var(--azul);
-border-bottom:3px solid var(--dorado);
-padding-bottom:8px;
+    color:#624c43;
+    border-bottom:2px solid #c9ab87;
+    padding-bottom:8px;
+    margin-top:45px;
+    font-size:31px;
 }
 
 h3{
-color:var(--azul2);
-font-size:22px;
+    color:#76594d;
+    font-size:25px;
 }
 
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
+.card{
+    background:white;
+    margin:25px 0;
+    padding:28px;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,.09);
 }
 
 .person{
-border:1px solid #dde3e9;
-border-radius:12px;
-overflow:hidden;
-background:white;
+    display:flex;
+    gap:30px;
+    align-items:flex-start;
 }
 
-.person img{
-width:100%;
-height:270px;
-object-fit:cover;
-display:block;
-background:#dce3e9;
+.photo{
+    width:190px;
+    min-width:190px;
+    height:230px;
+    object-fit:cover;
+    border-radius:10px;
+    border:5px solid #d4b995;
+    background:#e9e1d8;
 }
 
-.no{
-height:270px;
-background:linear-gradient(135deg,#dce3e9,#bdc9d5);
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:#41566b;
-font-size:20px;
-padding:25px;
+.photo-placeholder{
+    width:190px;
+    min-width:190px;
+    height:230px;
+    border-radius:10px;
+    border:5px solid #d4b995;
+    background:#e9e1d8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:15px;
+    color:#76594d;
+    font-size:18px;
 }
 
-.body{
-padding:20px;
-}
-
-.role{
-color:var(--dorado);
-font-weight:bold;
-font-size:15px;
+.info{
+    flex:1;
 }
 
 .quote{
-background:var(--crema);
-border-left:5px solid var(--dorado);
-padding:18px 20px;
-margin:18px 0;
+    background:#f0e7dc;
+    border-left:5px solid #a47d5a;
+    padding:18px 22px;
+    margin:20px 0;
+    font-style:italic;
 }
 
 .timeline{
-border-left:4px solid var(--dorado);
-padding-left:25px;
+    position:relative;
+    margin:30px 0;
+    padding-left:35px;
+    border-left:4px solid #b48b66;
 }
 
 .event{
-position:relative;
-margin-bottom:23px;
+    position:relative;
+    background:white;
+    padding:18px 22px;
+    margin:25px 0;
+    border-radius:8px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
 
 .event:before{
-content:"";
-position:absolute;
-left:-36px;
-top:7px;
-width:12px;
-height:12px;
-background:var(--dorado);
-border:3px solid white;
-border-radius:50%;
-box-shadow:0 0 0 2px var(--dorado);
+    content:"";
+    position:absolute;
+    width:16px;
+    height:16px;
+    background:#8c6956;
+    border-radius:50%;
+    left:-45px;
+    top:25px;
 }
 
 .year{
-color:var(--dorado);
-font-weight:bold;
-font-size:19px;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-}
-
-th,td{
-padding:12px;
-border-bottom:1px solid #ddd;
-text-align:left;
-vertical-align:top;
-}
-
-th{
-background:#edf1f5;
-color:var(--azul);
-}
-
-.team{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
-}
-
-.member{
-background:var(--crema);
-border-left:4px solid var(--dorado);
-padding:15px;
-border-radius:8px;
-font-weight:bold;
-}
-
-.sources a{
-color:#245b8a;
-}
-
-footer{
-background:var(--azul);
-color:white;
-text-align:center;
-padding:28px;
-margin:30px -34px 0;
-}
-
-/* CELULAR */
-
-@media(max-width:850px){
-
-aside{
-position:relative;
-width:100%;
-height:auto;
-}
-
-aside a{
-display:inline-block;
-}
-
-aside h4{
-display:none;
-}
-
-main{
-margin:0;
-padding:0 15px 30px;
-}
-
-.hero{
-margin:0 -15px 22px;
-padding:38px 22px;
-}
-
-.hero h1{
-font-size:40px;
-}
-
-.hero p{
-font-size:18px;
+    font-weight:bold;
+    color:#8c6249;
+    font-size:20px;
 }
 
 .grid{
-grid-template-columns:1fr;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+    gap:20px;
 }
 
-.team{
-grid-template-columns:1fr;
+.small-card{
+    background:white;
+    padding:23px;
+    border-top:5px solid #b58b62;
+    border-radius:8px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
+.small-card h3{
+    margin-top:0;
+}
+
+ul{
+    padding-left:25px;
+}
+
+li{
+    margin-bottom:7px;
+}
+
+.participantes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.participante{
+    background:#fff;
+    padding:18px;
+    text-align:center;
+    border-radius:8px;
+    border:1px solid #d9c6ae;
+    font-size:18px;
+}
+
+footer{
+    background:#342b2b;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin:50px -35px -50px;
+}
+
+.source{
+    font-size:14px;
+    color:#666;
+    margin-top:15px;
+}
+
+.source a{
+    color:#76594d;
+}
+
+.back{
+    display:inline-block;
+    margin-top:15px;
+    padding:8px 14px;
+    background:#76594d;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+/* MÓVIL */
+@media(max-width:800px){
+    .sidebar{
+        position:relative;
+        width:100%;
+        height:auto;
+        padding:15px;
+    }
+
+    .sidebar h2{
+        margin:5px 0 10px;
+    }
+
+    .sidebar a{
+        display:inline-block;
+        font-size:15px;
+        padding:7px 9px;
+    }
+
+    .main{
+        margin-left:0;
+        padding:0 18px 35px;
+    }
+
+    header{
+        margin:0 -18px 25px;
+        padding:40px 20px;
+    }
+
+    header h1{
+        font-size:34px;
+    }
+
+    .person{
+        flex-direction:column;
+    }
+
+    .photo,
+    .photo-placeholder{
+        width:180px;
+        min-width:180px;
+        align-self:center;
+    }
+
+    footer{
+        margin:40px -18px -35px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- MENÚ -->
+<!-- MENÚ LATERAL -->
+<nav class="sidebar">
+    <h2>Wiki Trabajo Social</h2>
 
-<aside>
-
-<div class="logo">
-Wiki Trabajo Social
-<small>Antonio Gramsci y autores relacionados</small>
-</div>
-
-<h4>Contenido</h4>
-
-<a href="#inicio">Página principal</a>
-<a href="#gramsci">Antonio Gramsci</a>
-<a href="#faleiros">Vicente de Paula Faleiros</a>
-<a href="#kisnerman">Natalio Kisnerman</a>
-<a href="#valdizon">Arlina Valdizón de Sánchez</a>
-<a href="#rozas">Margarita Rozas Pagaza</a>
-<a href="#dawes">Anna L. Dawes</a>
-
-<h4>Recursos</h4>
-
-<a href="#timeline">Línea del tiempo</a>
-<a href="#comparacion">Comparación</a>
-<a href="#integrantes">Integrantes</a>
-<a href="#fuentes">Fuentes</a>
-
-</aside>
+    <a href="#inicio">Inicio</a>
+    <a href="#gramsci">Antonio Gramsci</a>
+    <a href="#faleiros">Vicente de Paula Faleiros</a>
+    <a href="#kisnerman">Natalio Kisnerman</a>
+    <a href="#valdizon">Arlina Valdizón de Sánchez</a>
+    <a href="#rozas">Margarita Rozas Pagaza</a>
+    <a href="#dawes">Anna L. Dawes</a>
+    <a href="#comparacion">Aportes comparativos</a>
+    <a href="#cronologia">Cronología</a>
+    <a href="#publicaciones">Publicaciones</a>
+    <a href="#participantes">Participantes</a>
+    <a href="#fuentes">Fuentes</a>
+</nav>
 
 
-<main id="inicio">
+<main class="main">
 
-<!-- PORTADA -->
-
-<header class="hero">
-
-<div>
-Inicio › Historia, pensamiento y Trabajo Social
-</div>
-
-<h1>
-Antonio Gramsci y Trabajo Social
-</h1>
-
-<p>
-Wiki académica sobre Antonio Gramsci, su biografía, contexto histórico y geográfico, publicaciones y aportes al análisis del Trabajo Social, junto con referentes y precursores relacionados con la profesión.
-</p>
-
+<header id="inicio">
+    <h1>Pensamiento y Trabajo Social</h1>
+    <p>Autores y referentes para la comprensión crítica de la profesión</p>
+    <p>Wiki académica</p>
 </header>
 
 
-<!-- PRESENTACIÓN -->
+<section class="intro">
+    <h2>Presentación</h2>
 
-<section class="card">
+    <p>
+        Esta wiki presenta una selección de autores y referentes relacionados
+        con el pensamiento social, la intervención profesional y el desarrollo
+        histórico del Trabajo Social.
+    </p>
 
-<h2>Presentación</h2>
+    <p>
+        Se abordan sus principales datos biográficos, contexto histórico y
+        geográfico, aportes al Trabajo Social y algunas de sus publicaciones
+        más representativas.
+    </p>
 
-<p>
-Esta wiki tiene como eje central a <strong>Antonio Gramsci</strong> y reúne a
-<strong>Vicente de Paula Faleiros, Natalio Kisnerman, Arlina Valdizón de Sánchez, Margarita Rozas Pagaza y Anna L. Dawes</strong>.
-</p>
-
-<p>
-Los autores y referentes seleccionados pertenecen a diferentes momentos históricos y contextos geográficos. Sus aportes permiten comprender la evolución del Trabajo Social, sus métodos de intervención, su dimensión crítica y los procesos de profesionalización.
-</p>
-
-<div class="quote">
-
-<strong>Objetivo de la wiki:</strong>
-
-Comprender cómo el poder, la cultura, la cuestión social, la metodología, la intervención y la profesionalización han contribuido a la construcción histórica y teórica del Trabajo Social.
-
-</div>
-
+    <p>
+        El propósito es facilitar la comprensión de diferentes perspectivas
+        que han contribuido a la construcción del Trabajo Social como
+        disciplina y profesión.
+    </p>
 </section>
 
 
-<!-- GRAMSCI -->
-
-<section id="gramsci" class="card">
+<!-- ANTONIO GRAMSCI -->
+<section id="gramsci">
 
 <h2>Antonio Gramsci</h2>
 
-<div class="grid">
+<div class="card person">
 
-<article class="person">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Gramsci_1922.jpg"
+<img class="photo"
+src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Gramsci_1922.jpg"
 alt="Antonio Gramsci">
 
-<div class="body">
+<div class="info">
 
 <h3>Biografía</h3>
 
-<div class="role">
-1891–1937 · Italia
-</div>
-
 <p>
-Antonio Francesco Gramsci nació el 22 de enero de 1891 en Ales, Cerdeña, Italia, y murió en Roma el 27 de abril de 1937.
+Antonio Gramsci nació el 22 de enero de 1891 en Ales, Cerdeña, Italia,
+y murió el 27 de abril de 1937 en Roma. Fue filósofo, periodista,
+teórico político y uno de los principales pensadores marxistas del siglo XX.
 </p>
 
 <p>
-Fue periodista, filósofo, teórico político y dirigente comunista. Participó en la fundación del Partido Comunista de Italia en 1921.
+Participó en la fundación del Partido Comunista de Italia y desarrolló
+importantes reflexiones sobre la cultura, el poder, la sociedad civil,
+los intelectuales y la hegemonía.
 </p>
-
-<p>
-En 1926 fue encarcelado por el régimen fascista de Benito Mussolini. Durante su encarcelamiento escribió gran parte de sus reflexiones que posteriormente formarían los
-<strong>Cuadernos de la cárcel</strong>.
-</p>
-
-</div>
-
-</article>
-
-
-<article class="person">
-
-<div class="body">
 
 <h3>Contexto histórico y geográfico</h3>
 
 <p>
-Su pensamiento estuvo influido por las desigualdades entre las regiones italianas, especialmente por las condiciones sociales de Cerdeña.
+Su pensamiento se desarrolló principalmente durante las primeras décadas
+del siglo XX, en un período caracterizado por conflictos políticos,
+transformaciones económicas, industrialización, crecimiento de los
+movimientos obreros y el ascenso del fascismo italiano.
 </p>
 
-<p>
-Posteriormente se trasladó a Turín, importante centro industrial italiano, donde tuvo contacto con trabajadores, organizaciones obreras y movimientos políticos.
-</p>
-
-<p>
-También vivió el contexto de la Primera Guerra Mundial, la crisis política de la posguerra, el crecimiento del movimiento obrero y el ascenso del fascismo.
-</p>
-
-<h3>Conceptos clave</h3>
-
-<p>
-<strong>
-Hegemonía · Sociedad civil · Estado · Intelectuales · Sentido común · Cultura · Praxis
-</strong>
-</p>
-
-</div>
-
-</article>
-
-</div>
-
-
-<h3>Aporte a la profesión de Trabajo Social</h3>
-
-<p>
-Gramsci no fue trabajador social ni creó un método profesional de Trabajo Social. Su importancia para la profesión es principalmente
-<strong>teórica y crítica</strong>.
-</p>
-
-<p>
-Sus categorías permiten analizar las relaciones de poder, la cultura, las instituciones y las condiciones sociales que influyen en los problemas que enfrenta la población.
-</p>
+<h3>Aportes relacionados con el Trabajo Social</h3>
 
 <ul>
-
-<li>
-Permite realizar un análisis histórico y estructural de los problemas sociales.
-</li>
-
-<li>
-Ayuda a comprender la relación entre poder, cultura y sociedad civil.
-</li>
-
-<li>
-Permite analizar cómo determinadas ideas pueden convertirse en parte del sentido común.
-</li>
-
-<li>
-Relaciona teoría y práctica mediante el concepto de praxis.
-</li>
-
-<li>
-Favorece una intervención profesional orientada a la transformación social.
-</li>
-
+<li>Concepto de hegemonía cultural.</li>
+<li>Análisis de las relaciones entre poder, sociedad y cultura.</li>
+<li>Importancia de la conciencia crítica.</li>
+<li>Reconocimiento del papel de los intelectuales en la sociedad.</li>
+<li>Comprensión de las estructuras sociales que producen desigualdad.</li>
+<li>Reflexión sobre la transformación social y la praxis.</li>
 </ul>
 
+<div class="quote">
+La perspectiva gramsciana permite comprender que la intervención social
+también puede contribuir a cuestionar relaciones de poder y promover
+procesos de conciencia y transformación.
+</div>
 
-<h3>Publicaciones destacadas</h3>
-
-<ul>
-
-<li>
-<strong>Cuadernos de la cárcel</strong>
-</li>
-
-<li>
-<strong>Cartas desde la cárcel</strong>
-</li>
-
-<li>
-<strong>Notas sobre Maquiavelo, sobre la política y sobre el Estado moderno</strong>
-</li>
-
-<li>
-<strong>El materialismo histórico y la filosofía de Benedetto Croce</strong>
-</li>
-
-<li>
-Artículos publicados en <strong>L'Ordine Nuovo</strong>
-</li>
-
-</ul>
+</div>
+</div>
 
 </section>
 
 
 <!-- FALEIROS -->
-
-<section id="faleiros" class="card">
+<section id="faleiros">
 
 <h2>Vicente de Paula Faleiros</h2>
 
-<div class="grid">
+<div class="card person">
 
-<article class="person">
+<img class="photo"
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Vicente%20de%20Paula%20Faleiros.jpg"
+alt="Vicente de Paula Faleiros">
 
-<div class="no">
-Fotografía para incorporar desde una fuente institucional verificable.
-</div>
+<div class="info">
 
-<div class="body">
-
-<h3>Biografía y contexto</h3>
-
-<div class="role">
-Brasil · Trabajo Social crítico
-</div>
+<h3>Biografía</h3>
 
 <p>
-Vicente de Paula Faleiros es uno de los principales referentes del pensamiento crítico del Trabajo Social brasileño y latinoamericano.
+Vicente de Paula Faleiros nació en Brasil en 1941. Es trabajador social,
+docente e investigador brasileño, reconocido por sus aportes al pensamiento
+crítico y a la reconceptualización del Trabajo Social en América Latina.
 </p>
 
 <p>
-Su trayectoria se relaciona con los debates de la reconceptualización del Trabajo Social y con el análisis de las relaciones entre profesión, Estado, instituciones, poder e ideología.
+Su trayectoria estuvo vinculada con el análisis de las instituciones,
+las políticas sociales, las relaciones de poder y la intervención
+profesional.
 </p>
 
-</div>
+<h3>Contexto histórico y geográfico</h3>
 
-</article>
-
-
-<article class="person">
-
-<div class="body">
+<p>
+Su pensamiento se desarrolló principalmente en Brasil y otros espacios
+latinoamericanos durante un período de fuertes transformaciones políticas,
+sociales y económicas. También tuvo experiencias académicas en Chile,
+Canadá y otros países.
+</p>
 
 <h3>Aportes al Trabajo Social</h3>
 
-<p>
-Faleiros analiza la intervención profesional dentro de relaciones sociales y políticas concretas.
-</p>
-
-<p>
-Su pensamiento cuestiona las prácticas meramente asistenciales y propone comprender el Trabajo Social como una práctica vinculada con las relaciones de poder y las condiciones históricas.
-</p>
-
-<h3>Publicaciones</h3>
-
 <ul>
-
-<li>Trabajo Social: ideología y método</li>
-
-<li>Metodología e ideología del Trabajo Social</li>
-
-<li>Trabajo Social e instituciones</li>
-
+<li>Desarrollo de una perspectiva crítica de la profesión.</li>
+<li>Análisis de la relación entre Trabajo Social, Estado e instituciones.</li>
+<li>Crítica a las prácticas profesionales meramente asistencialistas.</li>
+<li>Importancia de comprender las relaciones de poder.</li>
+<li>Contribuciones al movimiento de reconceptualización del Trabajo Social.</li>
+<li>Defensa de una intervención profesional vinculada con la transformación social.</li>
 </ul>
 
 </div>
-
-</article>
-
 </div>
 
 </section>
 
 
 <!-- KISNERMAN -->
-
-<section id="kisnerman" class="card">
+<section id="kisnerman">
 
 <h2>Natalio Kisnerman</h2>
 
-<div class="grid">
+<div class="card person">
 
-<article class="person">
-
-<div class="no">
-Fotografía para incorporar desde una fuente institucional verificable.
+<div class="photo-placeholder">
+    Fotografía de<br>
+    Natalio Kisnerman
 </div>
 
-<div class="body">
+<div class="info">
 
 <h3>Biografía</h3>
 
-<div class="role">
-1929–2006 · Argentina
-</div>
-
 <p>
-Natalio Kisnerman fue trabajador social, docente y autor argentino.
+Natalio Kisnerman fue un destacado trabajador social, docente y escritor
+argentino. Nació en Buenos Aires en 1929 y desarrolló gran parte de su
+trayectoria académica y profesional en Argentina.
 </p>
 
 <p>
-Su producción tuvo gran influencia en la formación profesional latinoamericana, especialmente en los campos de metodología, grupos, comunidad, ética y práctica profesional.
+Es reconocido por sus aportes a la formación profesional y por sus
+reflexiones sobre los diferentes campos de intervención del Trabajo Social.
 </p>
 
-</div>
+<h3>Contexto histórico y geográfico</h3>
 
-</article>
-
-
-<article class="person">
-
-<div class="body">
+<p>
+Su trayectoria se desarrolló principalmente en Argentina y dentro del
+proceso latinoamericano de renovación y reconceptualización del Trabajo
+Social durante la segunda mitad del siglo XX.
+</p>
 
 <h3>Aportes al Trabajo Social</h3>
 
-<p>
-Kisnerman contribuyó a pensar el Trabajo Social como una profesión dinámica vinculada con las personas, los grupos y las comunidades.
-</p>
-
-<p>
-Destacó la importancia de la formación profesional, la ética, la intervención y la reflexión crítica sobre la práctica.
-</p>
-
-<h3>Publicaciones</h3>
-
 <ul>
-
-<li>Introducción al Trabajo Social</li>
-
-<li>Pensar el Trabajo Social</li>
-
-<li>Servicio Social de Grupo</li>
-
-<li>Comunidad</li>
-
-<li>Grupo</li>
-
+<li>Fortalecimiento de la formación profesional.</li>
+<li>Desarrollo del Trabajo Social con grupos.</li>
+<li>Reflexión sobre la intervención profesional.</li>
+<li>Importancia de la ética profesional.</li>
+<li>Trabajo comunitario y participación social.</li>
+<li>Reconocimiento de diferentes campos de actuación profesional.</li>
 </ul>
 
+<h3>Importancia</h3>
+
+<p>
+Kisnerman contribuyó a comprender el Trabajo Social como una profesión
+que requiere fundamentos teóricos, metodológicos y éticos para intervenir
+en las diferentes expresiones de la cuestión social.
+</p>
+
 </div>
-
-</article>
-
 </div>
 
 </section>
 
 
-<!-- VALDIZÓN -->
-
-<section id="valdizon" class="card">
+<!-- ARLINA -->
+<section id="valdizon">
 
 <h2>Arlina Valdizón de Sánchez</h2>
 
-<div class="grid">
+<div class="card person">
 
-<article class="person">
-
-<div class="no">
-Fotografía para incorporar desde una fuente universitaria verificable.
+<div class="photo-placeholder">
+    Fotografía de<br>
+    Arlina Valdizón<br>
+    de Sánchez
 </div>
 
-<div class="body">
-
-<h3>Referencia guatemalteca</h3>
-
-<div class="role">
-Trabajo Social · Guatemala
-</div>
-
-<p>
-Arlina Valdizón de Sánchez es una autora vinculada a la formación académica del Trabajo Social en Guatemala.
-</p>
-
-<p>
-Su obra
-<strong>Introducción al Trabajo Social</strong>,
-publicada por la Universidad Rafael Landívar, es utilizada como referencia para estudiar la profesión y la intervención profesional.
-</p>
-
-</div>
-
-</article>
-
-
-<article class="person">
-
-<div class="body">
-
-<h3>Aportes</h3>
-
-<p>
-Su enfoque permite organizar la intervención profesional en diferentes niveles, entre ellos:
-</p>
-
-<ul>
-
-<li>Individual y familiar</li>
-
-<li>Grupal</li>
-
-<li>Comunitario</li>
-
-</ul>
-
-<p>
-También destaca la importancia de la investigación y el diagnóstico social como bases para comprender una problemática antes de intervenir.
-</p>
-
-<h3>Publicación destacada</h3>
-
-<p>
-<strong>Introducción al Trabajo Social</strong>
-</p>
-
-</div>
-
-</article>
-
-</div>
-
-</section>
-
-
-<!-- ROZAS -->
-
-<section id="rozas" class="card">
-
-<h2>Margarita Rozas Pagaza</h2>
-
-<div class="grid">
-
-<article class="person">
-
-<img src="https://www.0221.com.ar/sites/default/files/styles/16_9_800x450/public/2025-05/margarita-rozas-pagaza.jpg"
-alt="Margarita Rozas Pagaza">
-
-<div class="body">
+<div class="info">
 
 <h3>Biografía</h3>
 
-<div class="role">
-1952 · Perú / Argentina
-</div>
-
 <p>
-Margarita Elena Rozas Pagaza nació el 6 de octubre de 1952 en Cusco, Perú.
+Arlina Valdizón de Sánchez es una autora guatemalteca vinculada con la
+formación y enseñanza del Trabajo Social. Sus aportes han sido utilizados
+en procesos académicos de formación profesional en Guatemala.
 </p>
 
-<p>
-Es licenciada en Trabajo Social por la Universidad Católica del Perú, magíster en Trabajo Social y doctora en Servicio Social, Políticas Sociales y Movimientos Sociales.
-</p>
+<h3>Contexto histórico y geográfico</h3>
 
 <p>
-Desarrolló una extensa trayectoria académica en la Universidad Nacional de La Plata, donde fue primera decana de la Facultad de Trabajo Social y profesora emérita.
+Su producción académica se encuentra relacionada con el desarrollo de la
+formación profesional del Trabajo Social en Guatemala y con la necesidad
+de contar con métodos, técnicas e instrumentos para la intervención social.
 </p>
-
-</div>
-
-</article>
-
-
-<article class="person">
-
-<div class="body">
 
 <h3>Aportes al Trabajo Social</h3>
 
-<p>
-Su producción se centra en la
-<strong>cuestión social, intervención profesional, políticas sociales, formación e investigación</strong>.
-</p>
-
-<p>
-Su enfoque permite comprender la intervención profesional como una construcción histórica y situada.
-</p>
-
-<h3>Principales líneas de trabajo</h3>
-
 <ul>
-
-<li>Cuestión social</li>
-
-<li>Intervención profesional</li>
-
-<li>Políticas sociales</li>
-
-<li>Formación profesional</li>
-
-<li>Investigación social</li>
-
+<li>Contribuciones a la formación de trabajadores sociales en Guatemala.</li>
+<li>Explicación de los niveles de intervención profesional.</li>
+<li>Importancia de la investigación social.</li>
+<li>Uso de técnicas e instrumentos para conocer la realidad.</li>
+<li>Importancia de la planificación, ejecución, monitoreo y evaluación.</li>
+<li>Intervención en los niveles individual, familiar, grupal y comunitario.</li>
 </ul>
 
+<h3>Obra destacada</h3>
+
+<p>
+<strong>Introducción al Trabajo Social</strong>, publicada por la
+Universidad Rafael Landívar. Esta obra ha sido utilizada como material
+de formación para estudiantes de Trabajo Social.
+</p>
+
+<div class="quote">
+El Trabajo Social requiere conocer, analizar e interpretar la realidad
+para desarrollar una intervención profesional fundamentada.
 </div>
 
-</article>
-
+</div>
 </div>
 
 </section>
 
 
-<!-- DAWES -->
+<!-- MARGARITA -->
+<section id="rozas">
 
-<section id="dawes" class="card">
+<h2>Margarita Rozas Pagaza</h2>
 
-<h2>Anna L. Dawes</h2>
+<div class="card person">
 
-<div class="grid">
+<img class="photo"
+src="https://archivos.unlp.edu.ar/index.php/rozas-pagaza-margarita-elena"
+alt="Margarita Rozas Pagaza">
 
-<article class="person">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/32/ANNA_LAURENS_DAWES.jpg"
-alt="Anna Laurens Dawes">
-
-<div class="body">
+<div class="info">
 
 <h3>Biografía</h3>
 
-<div class="role">
-1851–1938 · Estados Unidos
-</div>
-
 <p>
-Anna Laurens Dawes fue escritora, reformadora social y activista estadounidense.
+Margarita Elena Rozas Pagaza nació el 6 de octubre de 1952 en Cuzco,
+Perú. Es trabajadora social, investigadora y docente universitaria.
+Posteriormente obtuvo la ciudadanía argentina.
 </p>
 
 <p>
-Es considerada una figura importante en los antecedentes de la profesionalización del trabajo social por su participación en debates sobre la necesidad de formación especializada para quienes trabajaban con problemas sociales.
+Realizó sus estudios de Trabajo Social en la Universidad Católica del
+Perú y una Maestría Latinoamericana en Trabajo Social en la Universidad
+Nacional Autónoma de Honduras. También obtuvo un doctorado en Servicio
+Social, Políticas Sociales y Movimientos Sociales en la Pontificia
+Universidad Católica de São Paulo.
 </p>
 
-</div>
-
-</article>
-
-
-<article class="person">
-
-<div class="body">
-
-<h3>Aporte histórico</h3>
+<h3>Contexto histórico y geográfico</h3>
 
 <p>
-Su importancia para el Trabajo Social se relaciona principalmente con la
-<strong>profesionalización y formación especializada</strong>.
+Su trayectoria se desarrolla principalmente en América Latina,
+especialmente en Perú y Argentina, en un contexto marcado por debates
+sobre políticas sociales, cuestión social y transformación profesional.
 </p>
 
-<p>
-Sus planteamientos se desarrollaron en el contexto de los movimientos de reforma social de finales del siglo XIX en Estados Unidos.
-</p>
-
-<h3>Publicaciones</h3>
+<h3>Aportes al Trabajo Social</h3>
 
 <ul>
-
-<li>How We Are Governed</li>
-
-<li>The Modern Jew</li>
-
-<li>An Unknown Nation</li>
-
+<li>Estudio de la cuestión social.</li>
+<li>Análisis de las políticas sociales.</li>
+<li>Reflexión sobre la intervención profesional.</li>
+<li>Aportes a la formación universitaria de trabajadores sociales.</li>
+<li>Defensa de una intervención profesional crítica.</li>
+<li>Relación entre cuestión social, políticas públicas e intervención.</li>
 </ul>
 
+<h3>Importancia</h3>
+
+<p>
+Sus aportes permiten analizar la intervención profesional dentro de un
+contexto histórico y social, evitando comprender los problemas sociales
+como situaciones aisladas de las estructuras económicas y políticas.
+</p>
+
 </div>
-
-</article>
-
 </div>
 
 </section>
 
 
-<!-- LÍNEA DEL TIEMPO -->
+<!-- ANNA DAWES -->
+<section id="dawes">
 
-<section id="timeline" class="card">
+<h2>Anna L. Dawes</h2>
 
-<h2>Línea del tiempo</h2>
+<div class="card person">
 
-<div class="timeline">
+<img class="photo"
+src="https://upload.wikimedia.org/wikipedia/commons/3/32/ANNA_LAURENS_DAWES.jpg"
+alt="Anna Laurens Dawes">
 
-<div class="event">
-<div class="year">1851</div>
-<strong>Nace Anna L. Dawes</strong>
-<br>
-Estados Unidos.
+<div class="info">
+
+<h3>Biografía</h3>
+
+<p>
+Anna Laurens Dawes nació en 1851 en Estados Unidos. Fue escritora,
+activista social y participante en diferentes organizaciones relacionadas
+con la asistencia y el bienestar social.
+</p>
+
+<p>
+Su figura es importante dentro de la historia temprana de la
+profesionalización del Trabajo Social debido a su defensa de una
+preparación específica para quienes desarrollaban actividades de
+intervención social.
+</p>
+
+<h3>Contexto histórico y geográfico</h3>
+
+<p>
+Su trayectoria se desarrolló en Estados Unidos durante finales del siglo
+XIX y principios del siglo XX, una etapa caracterizada por procesos de
+industrialización, urbanización y crecimiento de los problemas sociales
+en las ciudades.
+</p>
+
+<h3>Aportes al Trabajo Social</h3>
+
+<ul>
+<li>Defensa de la preparación profesional para el trabajo social.</li>
+<li>Participación en organizaciones de carácter social y comunitario.</li>
+<li>Contribución a los debates sobre la profesionalización.</li>
+<li>Interés por problemas relacionados con pobreza y bienestar social.</li>
+<li>Importancia de la organización y formación para la acción social.</li>
+</ul>
+
+<h3>Importancia histórica</h3>
+
+<p>
+Anna L. Dawes representa uno de los antecedentes importantes en el proceso
+de construcción del Trabajo Social profesional, especialmente por su
+interés en que la intervención social contara con preparación y formación
+especializada.
+</p>
+
 </div>
-
-<div class="event">
-<div class="year">1891</div>
-<strong>Nace Antonio Gramsci</strong>
-<br>
-Ales, Cerdeña, Italia.
-</div>
-
-<div class="event">
-<div class="year">1919–1920</div>
-<strong>L'Ordine Nuovo</strong>
-<br>
-Gramsci participa en el periódico ligado al movimiento obrero de Turín.
-</div>
-
-<div class="event">
-<div class="year">1921</div>
-<strong>Fundación del Partido Comunista de Italia</strong>
-<br>
-Gramsci participa como uno de sus fundadores.
-</div>
-
-<div class="event">
-<div class="year">1926–1935</div>
-<strong>Prisión y Cuadernos de la cárcel</strong>
-<br>
-Gramsci desarrolla gran parte de su producción teórica.
-</div>
-
-<div class="event">
-<div class="year">1929</div>
-<strong>Nace Natalio Kisnerman</strong>
-<br>
-Argentina.
-</div>
-
-<div class="event">
-<div class="year">1941</div>
-<strong>Nace Vicente de Paula Faleiros</strong>
-<br>
-Brasil.
-</div>
-
-<div class="event">
-<div class="year">1952</div>
-<strong>Nace Margarita Rozas Pagaza</strong>
-<br>
-Cusco, Perú.
-</div>
-
-<div class="event">
-<div class="year">Siglo XX</div>
-<strong>Reconceptualización latinoamericana</strong>
-<br>
-Se fortalecen perspectivas críticas del Trabajo Social.
-</div>
-
 </div>
 
 </section>
 
 
 <!-- COMPARACIÓN -->
+<section id="comparacion">
 
-<section id="comparacion" class="card">
+<h2>Aportes comparativos</h2>
 
-<h2>Comparación de aportes</h2>
+<div class="grid">
 
-<table>
+<div class="small-card">
+<h3>Antonio Gramsci</h3>
+<p>
+Aporta herramientas para comprender la hegemonía, el poder, la cultura,
+la conciencia crítica y la transformación social.
+</p>
+</div>
 
-<tr>
-<th>Autor/a</th>
-<th>Región</th>
-<th>Aporte principal</th>
-</tr>
+<div class="small-card">
+<h3>Vicente de Paula Faleiros</h3>
+<p>
+Analiza el Trabajo Social desde una perspectiva crítica, considerando
+las instituciones, las políticas sociales y las relaciones de poder.
+</p>
+</div>
 
-<tr>
-<td>Antonio Gramsci</td>
-<td>Italia</td>
-<td>
-Hegemonía, poder, cultura, sociedad civil y praxis.
-</td>
-</tr>
+<div class="small-card">
+<h3>Natalio Kisnerman</h3>
+<p>
+Fortalece la formación profesional, el Trabajo Social con grupos,
+la intervención comunitaria y la ética profesional.
+</p>
+</div>
 
-<tr>
-<td>Vicente de Paula Faleiros</td>
-<td>Brasil</td>
-<td>
-Trabajo Social crítico, ideología, método, instituciones y poder.
-</td>
-</tr>
+<div class="small-card">
+<h3>Arlina Valdizón de Sánchez</h3>
+<p>
+Contribuye a la formación del Trabajo Social en Guatemala y al estudio
+de métodos, técnicas y niveles de intervención.
+</p>
+</div>
 
-<tr>
-<td>Natalio Kisnerman</td>
-<td>Argentina</td>
-<td>
-Metodología, grupos, comunidad, ética y formación profesional.
-</td>
-</tr>
+<div class="small-card">
+<h3>Margarita Rozas Pagaza</h3>
+<p>
+Analiza la cuestión social, las políticas sociales y la intervención
+profesional desde una perspectiva latinoamericana.
+</p>
+</div>
 
-<tr>
-<td>Arlina Valdizón de Sánchez</td>
-<td>Guatemala</td>
-<td>
-Niveles de intervención, investigación y diagnóstico.
-</td>
-</tr>
+<div class="small-card">
+<h3>Anna L. Dawes</h3>
+<p>
+Es relevante para comprender los antecedentes de la profesionalización
+y la necesidad de formación especializada en la acción social.
+</p>
+</div>
 
-<tr>
-<td>Margarita Rozas Pagaza</td>
-<td>Perú / Argentina</td>
-<td>
-Cuestión social, intervención, políticas sociales y formación.
-</td>
-</tr>
-
-<tr>
-<td>Anna L. Dawes</td>
-<td>Estados Unidos</td>
-<td>
-Antecedentes de profesionalización y formación especializada.
-</td>
-</tr>
-
-</table>
+</div>
 
 </section>
 
 
-<!-- INTEGRANTES -->
+<!-- CRONOLOGÍA -->
+<section id="cronologia">
 
-<section id="integrantes" class="card">
+<h2>Cronología</h2>
 
-<h2>Integrantes de la wiki</h2>
+<div class="timeline">
 
-<div class="team">
-
-<div class="member">
-Scarlet Valladares
+<div class="event">
+<span class="year">1851</span>
+<p>
+Nacimiento de Anna Laurens Dawes en Estados Unidos.
+</p>
 </div>
 
-<div class="member">
-Krezdy Monzon
+<div class="event">
+<span class="year">1891</span>
+<p>
+Nacimiento de Antonio Gramsci en Ales, Cerdeña.
+</p>
 </div>
 
-<div class="member">
-Astrid Onofre
+<div class="event">
+<span class="year">1929</span>
+<p>
+Nacimiento de Natalio Kisnerman en Buenos Aires, Argentina.
+</p>
 </div>
 
-<div class="member">
-Dulce Peñate
+<div class="event">
+<span class="year">1941</span>
+<p>
+Nacimiento de Vicente de Paula Faleiros en Brasil.
+</p>
 </div>
 
-<div class="member">
-Melissa Gonzales
+<div class="event">
+<span class="year">1952</span>
+<p>
+Nacimiento de Margarita Rozas Pagaza en Cuzco, Perú.
+</p>
 </div>
 
-<div class="member">
-Blanca Soto
+<div class="event">
+<span class="year">1995</span>
+<p>
+Publicación de la segunda edición de
+<em>Introducción al Trabajo Social</em> de Arlina Valdizón de Sánchez,
+por la Universidad Rafael Landívar.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PUBLICACIONES -->
+<section id="publicaciones">
+
+<h2>Publicaciones y obras destacadas</h2>
+
+<div class="grid">
+
+<div class="small-card">
+<h3>Antonio Gramsci</h3>
+<ul>
+<li>Cuadernos de la cárcel</li>
+<li>Los intelectuales y la organización de la cultura</li>
+<li>El materialismo histórico y la filosofía de Benedetto Croce</li>
+<li>Literatura y vida nacional</li>
+</ul>
+</div>
+
+<div class="small-card">
+<h3>Vicente de Paula Faleiros</h3>
+<ul>
+<li>Trabajo Social: ideología y método</li>
+<li>Metodología e ideología del Trabajo Social</li>
+<li>Trabajo Social e instituciones</li>
+</ul>
+</div>
+
+<div class="small-card">
+<h3>Natalio Kisnerman</h3>
+<ul>
+<li>Servicio Social de grupo</li>
+<li>Ética para el Servicio Social</li>
+<li>Salud pública y Trabajo Social</li>
+<li>Introducción al Trabajo Social</li>
+<li>Didáctica para el Trabajo Social</li>
+<li>Atención individualizada y familiar</li>
+</ul>
+</div>
+
+<div class="small-card">
+<h3>Arlina Valdizón de Sánchez</h3>
+<ul>
+<li>Introducción al Trabajo Social</li>
+</ul>
+</div>
+
+<div class="small-card">
+<h3>Margarita Rozas Pagaza</h3>
+<ul>
+<li>La intervención profesional en relación con la cuestión social</li>
+<li>Trabajo Social y compromiso ético</li>
+<li>Estudios sobre cuestión social y políticas sociales</li>
+</ul>
+</div>
+
+<div class="small-card">
+<h3>Anna L. Dawes</h3>
+<ul>
+<li>How We Are Governed</li>
+<li>Charles Sumner</li>
+<li>The Modern Jew</li>
+<li>The Indian as Citizen</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PARTICIPANTES -->
+<section id="participantes">
+
+<h2>Integrantes del grupo</h2>
+
+<div class="participantes">
+
+<div class="participante">
+<strong>Scarlet Valladares</strong>
+</div>
+
+<div class="participante">
+<strong>Krezdy Monzon</strong>
+</div>
+
+<div class="participante">
+<strong>Astrid Onofre</strong>
+</div>
+
+<div class="participante">
+<strong>Dulce Peñate</strong>
+</div>
+
+<div class="participante">
+<strong>Melissa Gonzales</strong>
+</div>
+
+<div class="participante">
+<strong>Blanca Soto</strong>
 </div>
 
 </div>
@@ -1064,66 +940,64 @@ Blanca Soto
 
 
 <!-- FUENTES -->
+<section id="fuentes">
 
-<section id="fuentes" class="card sources">
+<h2>Fuentes de consulta</h2>
 
-<h2>Fuentes</h2>
+<div class="card">
 
 <ul>
 
 <li>
-<a href="https://archivos.unlp.edu.ar/index.php/rozas-pagaza-margarita-elena" target="_blank">
-Archivos de la Universidad Nacional de La Plata – Margarita Rozas Pagaza
-</a>
+Wikimedia Commons. Archivo fotográfico de Antonio Gramsci.
 </li>
 
 <li>
-<a href="https://unlp.edu.ar/institucional/distinguen-a-la-profesora-rozas-pagaza-como-profesora-emerita-17343-22343/" target="_blank">
-Universidad Nacional de La Plata – trayectoria de Margarita Rozas Pagaza
-</a>
+Wikimedia Commons. Archivo fotográfico de Vicente de Paula Faleiros.
 </li>
 
 <li>
-<a href="https://commons.wikimedia.org/wiki/File:Gramsci_1922.jpg" target="_blank">
-Wikimedia Commons – Antonio Gramsci
-</a>
+Wikimedia Commons. Archivo histórico de Anna Laurens Dawes.
 </li>
 
 <li>
-<a href="https://commons.wikimedia.org/wiki/File:ANNA_LAURENS_DAWES.jpg" target="_blank">
-Wikimedia Commons – Anna Laurens Dawes
-</a>
+Universidad Nacional de La Plata. Archivo de Margarita Rozas Pagaza.
 </li>
 
 <li>
-Faleiros, Vicente de Paula – trabajos sobre Trabajo Social crítico, metodología, ideología e instituciones.
+Universidad Rafael Landívar. Valdizón de Sánchez, Arlina.
+<em>Introducción al Trabajo Social</em>.
 </li>
 
 <li>
-Kisnerman, Natalio – publicaciones sobre metodología, grupos, comunidad, ética y formación profesional.
+Universidad de San Carlos de Guatemala. Trabajos académicos que
+referencian los aportes de Arlina Valdizón de Sánchez.
 </li>
 
 <li>
-Valdizón de Sánchez, Arlina – <em>Introducción al Trabajo Social</em>, Universidad Rafael Landívar.
+Marxists Internet Archive. Archivo de Antonio Gramsci.
 </li>
 
 </ul>
 
+<p class="source">
+Esta wiki fue elaborada con fines académicos para el estudio de
+pensadores, autores y referentes vinculados con el Trabajo Social.
+</p>
+
+</div>
+
 </section>
 
 
-<!-- PIE -->
+<a class="back" href="#inicio">↑ Volver al inicio</a>
+
 
 <footer>
-
-<strong>
-Wiki académica · Antonio Gramsci y Trabajo Social
-</strong>
-
-<br><br>
-
-Scarlet Valladares · Krezdy Monzon · Astrid Onofre · Dulce Peñate · Melissa Gonzales · Blanca Soto
-
+<p><strong>Wiki académica de Trabajo Social</strong></p>
+<p>Universidad Rafael Landívar</p>
+<p>Trabajo Social</p>
+<p>2026</p>
 </footer>
 
 </main>
